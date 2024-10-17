@@ -12,6 +12,12 @@ aiohttp>=3.9.0
 protobuf>=3
 types-protobuf>=3
 pytest==7.1.2
+grpcio==1.67.0
+grpcio-tools==1.67.0
+qrcode==7.3.1
+bcrypt==4.0.1
+pyotp==2.7.0
+livekit-python-sdk==0.1.0  # Replace with actual version if available
 -e ./livekit/livekit_api
 -e ./livekit/livekit_protocol
 -e ./livekit/livekit_rtc
