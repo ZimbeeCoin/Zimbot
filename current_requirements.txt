@@ -19,17 +19,17 @@ iniconfig==2.0.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
 # Editable install with no version control (livekit==0.17.5)
--e c:\zimbeecoin\zimbot\livekit\livekit-rtc
--e git+https://github.com/ZimbeeCoin/Zimbot.git@0c8cebd532293b1677dcb173076cbdebc16fada8#egg=livekit_api&subdirectory=livekit\livekit_api
--e git+https://github.com/ZimbeeCoin/Zimbot.git@0c8cebd532293b1677dcb173076cbdebc16fada8#egg=livekit_protocol&subdirectory=livekit\livekit_protocol
--e git+https://github.com/ZimbeeCoin/Zimbot.git@0c8cebd532293b1677dcb173076cbdebc16fada8#egg=livekit_rtc&subdirectory=livekit\livekit_rtc
+-e /c/ZimbeeCoin/Zimbot/livekit/livekit-rtc
+-e git+https://github.com/ZimbeeCoin/Zimbot.git@0c8cebd532293b1677dcb173076cbdebc16fada8#egg=livekit_api&subdirectory=livekit/livekit_api
+-e git+https://github.com/ZimbeeCoin/Zimbot.git@0c8cebd532293b1677dcb173076cbdebc16fada8#egg=livekit_protocol&subdirectory=livekit/livekit_protocol
+-e git+https://github.com/ZimbeeCoin/Zimbot.git@0c8cebd532293b1677dcb173076cbdebc16fada8#egg=livekit_rtc&subdirectory=livekit/livekit_rtc
 MarkupSafe==3.0.1
 multidict==6.1.0
 openai==0.27.0
 packaging==24.1
 pluggy==1.5.0
 propcache==0.2.0
-protobuf==5.28.2
+protobuf==5.27.2
 py==1.11.0
 PyJWT==2.9.0
 pytest==7.1.2
