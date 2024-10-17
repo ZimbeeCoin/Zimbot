@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zimbot Consultation</title>
+    <script src="https://unpkg.com/livekit-client@1.3.0/dist/livekit.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #video-container { display: flex; justify-content: center; margin-top: 20px; }
+        video { width: 45%; margin: 0 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Zimbot Real-Time Consultation</h1>
+    <div id="video-container">
+        <video id="localVideo" autoplay muted></video>
+        <video id="remoteVideo" autoplay></video>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomName = urlParams.get('room');
+        const token = urlParams.get('token');
+
+        if (!roomName || !token) {
+            alert('Invalid room or token.');
+        } else {
+            const { Room, RoomEvent, Track } = LiveKit;
+            const room = new Room();
+
+            room.on(RoomEvent.TrackPublished, track => {
+                if (track.kind === Track.Kind.Video) {
+                    track.attach(document.getElementById('remoteVideo'));
+                }
+            });
+
+            room.on(RoomEvent.TrackSubscribed, track => {
+                if (track.kind === Track.Kind.Video) {
+                    track.attach(document.getElementById('remoteVideo'));
+                }
+            });
+
+            room.connect('wss://zimbee-gp6dbt5a.livekit.cloud', token, { room: roomName })
+                .then(() => {
+                    console.log(`Connected to LiveKit room: ${roomName}`);
+                    const localTrack = LiveKit.createLocalVideoTrack();
+                    room.localParticipant.publishTrack(localTrack);
+                    localTrack.attach(document.getElementById('localVideo'));
+                })
+                .catch(err => {
+                    console.error('Failed to connect to LiveKit room:', err);
+                });
+        }
+    </script>
+</body>
+</html>
