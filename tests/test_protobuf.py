@@ -2,7 +2,7 @@ import os
 import sys
 
 # Add the path to livekit_protocol/protocol to the Python module search path
-sys.path.append(os.path.abspath("C:/ZimbeeCoin/Zimbot/livekit/livekit_protocol/protocol"))
+sys.path.append("/home/zimbot/ZimbeeCoin/Zimbot/livekit/livekit_protocol/protocol")
 
 # Import the necessary protobuf modules
 import livekit_agent_pb2
