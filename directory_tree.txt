@@ -1,0 +1,539 @@
+├── .env
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── config
+│   ├── description
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-checkout
+│   │   ├── post-commit
+│   │   ├── post-merge
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── lfs
+│   │   ├── cache
+│   │   ├── objects
+│   │   └── tmp
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   ├── objects
+│   │   ├── 01
+│   │   ├── 03
+│   │   ├── 06
+│   │   ├── 07
+│   │   ├── 08
+│   │   ├── 0a
+│   │   ├── 0c
+│   │   ├── 0e
+│   │   ├── 10
+│   │   ├── 11
+│   │   ├── 13
+│   │   ├── 14
+│   │   ├── 15
+│   │   ├── 16
+│   │   ├── 18
+│   │   ├── 19
+│   │   ├── 1a
+│   │   ├── 1b
+│   │   ├── 1c
+│   │   ├── 1e
+│   │   ├── 1f
+│   │   ├── 20
+│   │   ├── 21
+│   │   ├── 22
+│   │   ├── 23
+│   │   ├── 26
+│   │   ├── 27
+│   │   ├── 28
+│   │   ├── 29
+│   │   ├── 2c
+│   │   ├── 2e
+│   │   ├── 30
+│   │   ├── 31
+│   │   ├── 33
+│   │   ├── 35
+│   │   ├── 37
+│   │   ├── 38
+│   │   ├── 3b
+│   │   ├── 3c
+│   │   ├── 3f
+│   │   ├── 41
+│   │   ├── 42
+│   │   ├── 43
+│   │   ├── 44
+│   │   ├── 45
+│   │   ├── 47
+│   │   ├── 48
+│   │   ├── 4b
+│   │   ├── 4c
+│   │   ├── 4d
+│   │   ├── 4f
+│   │   ├── 50
+│   │   ├── 51
+│   │   ├── 53
+│   │   ├── 54
+│   │   ├── 55
+│   │   ├── 56
+│   │   ├── 58
+│   │   ├── 59
+│   │   ├── 5a
+│   │   ├── 5c
+│   │   ├── 5d
+│   │   ├── 5e
+│   │   ├── 5f
+│   │   ├── 60
+│   │   ├── 61
+│   │   ├── 62
+│   │   ├── 65
+│   │   ├── 66
+│   │   ├── 6b
+│   │   ├── 6c
+│   │   ├── 6d
+│   │   ├── 6e
+│   │   ├── 70
+│   │   ├── 71
+│   │   ├── 72
+│   │   ├── 73
+│   │   ├── 74
+│   │   ├── 75
+│   │   ├── 76
+│   │   ├── 77
+│   │   ├── 78
+│   │   ├── 79
+│   │   ├── 7a
+│   │   ├── 7b
+│   │   ├── 7c
+│   │   ├── 7e
+│   │   ├── 7f
+│   │   ├── 80
+│   │   ├── 81
+│   │   ├── 82
+│   │   ├── 83
+│   │   ├── 86
+│   │   ├── 87
+│   │   ├── 88
+│   │   ├── 89
+│   │   ├── 8a
+│   │   ├── 8e
+│   │   ├── 90
+│   │   ├── 91
+│   │   ├── 94
+│   │   ├── 95
+│   │   ├── 96
+│   │   ├── 97
+│   │   ├── 99
+│   │   ├── 9b
+│   │   ├── 9c
+│   │   ├── 9d
+│   │   ├── 9e
+│   │   ├── 9f
+│   │   ├── a0
+│   │   ├── a1
+│   │   ├── a3
+│   │   ├── a4
+│   │   ├── a5
+│   │   ├── a6
+│   │   ├── a7
+│   │   ├── a8
+│   │   ├── a9
+│   │   ├── ab
+│   │   ├── ac
+│   │   ├── af
+│   │   ├── b2
+│   │   ├── b4
+│   │   ├── b5
+│   │   ├── b6
+│   │   ├── b7
+│   │   ├── b8
+│   │   ├── ba
+│   │   ├── bf
+│   │   ├── c3
+│   │   ├── c4
+│   │   ├── c6
+│   │   ├── c7
+│   │   ├── c8
+│   │   ├── cb
+│   │   ├── cc
+│   │   ├── cd
+│   │   ├── ce
+│   │   ├── d0
+│   │   ├── d1
+│   │   ├── d3
+│   │   ├── d4
+│   │   ├── d6
+│   │   ├── d8
+│   │   ├── d9
+│   │   ├── dc
+│   │   ├── df
+│   │   ├── e0
+│   │   ├── e1
+│   │   ├── e3
+│   │   ├── e4
+│   │   ├── e6
+│   │   ├── e7
+│   │   ├── e8
+│   │   ├── e9
+│   │   ├── ea
+│   │   ├── eb
+│   │   ├── ec
+│   │   ├── ed
+│   │   ├── ef
+│   │   ├── f0
+│   │   ├── f1
+│   │   ├── f2
+│   │   ├── f7
+│   │   ├── fb
+│   │   ├── fc
+│   │   ├── fd
+│   │   ├── fe
+│   │   ├── info
+│   │   └── pack
+│   ├── ORIG_HEAD
+│   └── refs
+│       ├── heads
+│       ├── remotes
+│       └── tags
+├── .gitignore
+├── .vscode
+│   └── settings.json
+├── current_requirements.txt
+├── directory_tree.txt
+├── dockerfile
+├── index.html
+├── LICENSE
+├── livekit
+│   ├── agent
+│   │   └── __init__.py
+│   ├── cli
+│   │   └── lk
+│   ├── client
+│   │   └── __init__.py
+│   ├── livekit_api
+│   │   ├── livekit
+│   │   ├── livekit_api.egg-info
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── setup.py
+│   │   ├── tests
+│   │   └── __init__.py
+│   ├── livekit_protocol
+│   │   ├── generate_proto.sh
+│   │   ├── livekit
+│   │   ├── livekit_protocol.egg-info
+│   │   ├── protocol
+│   │   ├── proto_files
+│   │   ├── setup.py
+│   │   └── __init__.py
+│   ├── livekit_rtc
+│   │   ├── generate_proto.sh
+│   │   ├── livekit
+│   │   ├── livekit_rtc.egg-info
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── rust-sdks
+│   │   ├── setup.py
+│   │   ├── tests
+│   │   └── __init__.py
+│   └── __init__.py
+├── old_requirements_backup.txt
+├── print_tree.py
+├── protoc
+│   ├── bin
+│   │   └── protoc.exe
+│   ├── include
+│   │   └── google
+│   ├── protoc-24.0-linux-x86_64.zip
+│   └── readme.txt
+├── protocol
+│   ├── .changeset
+│   │   ├── config.json
+│   │   └── README.md
+│   ├── .git
+│   │   ├── branches
+│   │   ├── config
+│   │   ├── description
+│   │   ├── HEAD
+│   │   ├── hooks
+│   │   ├── index
+│   │   ├── info
+│   │   ├── logs
+│   │   ├── objects
+│   │   ├── packed-refs
+│   │   └── refs
+│   ├── .gitattributes
+│   ├── .github
+│   │   └── workflows
+│   ├── .gitignore
+│   ├── .idea
+│   │   ├── .gitignore
+│   │   ├── modules.xml
+│   │   ├── protocol.iml
+│   │   └── vcs.xml
+│   ├── agent
+│   │   └── token.go
+│   ├── auth
+│   │   ├── accesstoken.go
+│   │   ├── accesstoken_test.go
+│   │   ├── authfakes
+│   │   ├── grants.go
+│   │   ├── grants_test.go
+│   │   ├── interfaces.go
+│   │   ├── provider.go
+│   │   ├── provider_test.go
+│   │   ├── verifier.go
+│   │   └── verifier_test.go
+│   ├── bootstrap.sh
+│   ├── CHANGELOG.md
+│   ├── egress
+│   │   ├── errors.go
+│   │   ├── redact.go
+│   │   ├── redact_test.go
+│   │   ├── token.go
+│   │   ├── types.go
+│   │   └── types_test.go
+│   ├── go.mod
+│   ├── go.sum
+│   ├── infra
+│   │   ├── link.pb.go
+│   │   └── link_grpc.pb.go
+│   ├── ingress
+│   │   ├── errors.go
+│   │   ├── token.go
+│   │   ├── validation.go
+│   │   └── validation_test.go
+│   ├── LICENSE
+│   ├── livekit
+│   │   ├── attrs.go
+│   │   ├── livekit_agent.pb.go
+│   │   ├── livekit_agent_dispatch.pb.go
+│   │   ├── livekit_agent_dispatch.twirp.go
+│   │   ├── livekit_analytics.pb.go
+│   │   ├── livekit_egress.pb.go
+│   │   ├── livekit_egress.twirp.go
+│   │   ├── livekit_ingress.pb.go
+│   │   ├── livekit_ingress.twirp.go
+│   │   ├── livekit_internal.pb.go
+│   │   ├── livekit_metrics.pb.go
+│   │   ├── livekit_models.pb.go
+│   │   ├── livekit_room.pb.go
+│   │   ├── livekit_room.twirp.go
+│   │   ├── livekit_rtc.pb.go
+│   │   ├── livekit_sip.pb.go
+│   │   ├── livekit_sip.twirp.go
+│   │   ├── livekit_webhook.pb.go
+│   │   ├── README.md
+│   │   ├── sip.go
+│   │   ├── sip_test.go
+│   │   ├── types.go
+│   │   └── types_test.go
+│   ├── logger
+│   │   ├── config.go
+│   │   ├── logger.go
+│   │   ├── logger_test.go
+│   │   ├── pionlogger
+│   │   ├── proto.go
+│   │   ├── slice.go
+│   │   ├── slog.go
+│   │   └── zaputil
+│   ├── magefile.go
+│   ├── NOTICE
+│   ├── package.json
+│   ├── packages
+│   │   └── javascript
+│   ├── pnpm-lock.yaml
+│   ├── pnpm-workspace.yaml
+│   ├── pprof
+│   │   └── pprof.go
+│   ├── protobufs
+│   │   ├── cloud_replay.proto
+│   │   ├── infra
+│   │   ├── livekit_agent.proto
+│   │   ├── livekit_agent_dispatch.proto
+│   │   ├── livekit_analytics.proto
+│   │   ├── livekit_egress.proto
+│   │   ├── livekit_ingress.proto
+│   │   ├── livekit_internal.proto
+│   │   ├── livekit_metrics.proto
+│   │   ├── livekit_models.proto
+│   │   ├── livekit_room.proto
+│   │   ├── livekit_rtc.proto
+│   │   ├── livekit_sip.proto
+│   │   ├── livekit_webhook.proto
+│   │   └── rpc
+│   ├── psrpc
+│   │   ├── compilercheck.go
+│   │   └── errors.go
+│   ├── redis
+│   │   └── redis.go
+│   ├── renovate.json
+│   ├── replay
+│   │   ├── cloud_replay.pb.go
+│   │   └── cloud_replay.twirp.go
+│   ├── rpc
+│   │   ├── agent.pb.go
+│   │   ├── agent.psrpc.go
+│   │   ├── agent_dispatch.pb.go
+│   │   ├── agent_dispatch.psrpc.go
+│   │   ├── analytics.pb.go
+│   │   ├── analytics_grpc.pb.go
+│   │   ├── egress.pb.go
+│   │   ├── egress.psrpc.go
+│   │   ├── egress_client.go
+│   │   ├── ingress.pb.go
+│   │   ├── ingress.psrpc.go
+│   │   ├── ingress_client.go
+│   │   ├── io.pb.go
+│   │   ├── io.psrpc.go
+│   │   ├── keepalive.pb.go
+│   │   ├── keepalive.psrpc.go
+│   │   ├── logging.go
+│   │   ├── metrics.go
+│   │   ├── participant.pb.go
+│   │   ├── participant.psrpc.go
+│   │   ├── race.go
+│   │   ├── room.pb.go
+│   │   ├── room.psrpc.go
+│   │   ├── roommanager.pb.go
+│   │   ├── roommanager.psrpc.go
+│   │   ├── rpcfakes
+│   │   ├── signal.pb.go
+│   │   ├── signal.psrpc.go
+│   │   ├── sip.go
+│   │   ├── sip.pb.go
+│   │   ├── sip.psrpc.go
+│   │   ├── sip_client.go
+│   │   ├── sip_test.go
+│   │   └── typed_api.go
+│   ├── sdp
+│   │   └── sdp.go
+│   ├── sip
+│   │   ├── sip.go
+│   │   ├── sip_test.go
+│   │   └── token.go
+│   ├── tools
+│   │   └── tools.go
+│   ├── tracer
+│   │   └── tracer.go
+│   ├── utils
+│   │   ├── bitmap.go
+│   │   ├── bitmap_test.go
+│   │   ├── clock.go
+│   │   ├── closers.go
+│   │   ├── codec.go
+│   │   ├── configobserver.go
+│   │   ├── configobserver_test.go
+│   │   ├── configutil
+│   │   ├── connectionquality.go
+│   │   ├── dedupedslice.go
+│   │   ├── dedupedslice_test.go
+│   │   ├── deepcopy.go
+│   │   ├── deepcopy_test.go
+│   │   ├── error.go
+│   │   ├── err_array.go
+│   │   ├── err_array_test.go
+│   │   ├── event_emitter.go
+│   │   ├── event_emitter_test.go
+│   │   ├── graph.go
+│   │   ├── graph_test.go
+│   │   ├── guid
+│   │   ├── hedge.go
+│   │   ├── hedge_test.go
+│   │   ├── hwstats
+│   │   ├── id.go
+│   │   ├── interceptors
+│   │   ├── latencyaggregate.go
+│   │   ├── lock_tracker.go
+│   │   ├── lock_tracker_test.go
+│   │   ├── math.go
+│   │   ├── multitonservice.go
+│   │   ├── multitonservice_test.go
+│   │   ├── must
+│   │   ├── options
+│   │   ├── parallel.go
+│   │   ├── parallel_test.go
+│   │   ├── promise.go
+│   │   ├── proto.go
+│   │   ├── protoproxy.go
+│   │   ├── protoproxy_test.go
+│   │   ├── rate.go
+│   │   ├── rate_test.go
+│   │   ├── redact.go
+│   │   ├── rtpstats.go
+│   │   ├── secret.go
+│   │   ├── timed_aggregator.go
+│   │   ├── timed_aggregator_test.go
+│   │   ├── timed_version.go
+│   │   ├── timed_version_test.go
+│   │   ├── timeoutqueue.go
+│   │   ├── timeoutqueue_test.go
+│   │   ├── timeseries
+│   │   ├── welford.go
+│   │   └── workergroup.go
+│   ├── webhook
+│   │   ├── consts.go
+│   │   ├── notifier.go
+│   │   ├── url_notifier.go
+│   │   ├── verifier.go
+│   │   └── webhook_test.go
+│   └── xtls
+│       └── tls.go
+├── README.md
+├── requirements.txt
+├── src
+│   ├── integrations
+│   └── utils
+├── tests
+│   ├── test_protobuf.py
+│   └── __init__.py
+├── test_livekit.py
+├── venv
+│   ├── bin
+│   │   ├── python
+│   │   ├── python3
+│   │   └── python3.10
+│   ├── include
+│   ├── lib
+│   │   └── python3.10
+│   ├── lib64
+│   │   └── python3.10
+│   └── pyvenv.cfg
+└── venv_backup
+    ├── Include
+    ├── Lib
+    │   └── site-packages
+    ├── pyvenv.cfg
+    └── Scripts
+        ├── activate
+        ├── activate.bat
+        ├── Activate.ps1
+        ├── deactivate.bat
+        ├── dotenv.exe
+        ├── flask.exe
+        ├── normalizer.exe
+        ├── openai.exe
+        ├── pip.exe
+        ├── pip3.12.exe
+        ├── pip3.exe
+        ├── py.test.exe
+        ├── pytest.exe
+        ├── python.exe
+        ├── pythonw.exe
+        └── tqdm.exe

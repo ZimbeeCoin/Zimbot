@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: livekit_rtc
+Version: 0.17.5
+Summary: Python Real-time SDK for LiveKit and RTC integration for ZIMBOT
+Home-page: https://github.com/ZimbeeCoin/Zimbot
+Author: Tatelyn Jenner
+Author-email: tatelynjenner@gmail.com
+Maintainer: Michael Smith
+Maintainer-email: michaelsmithking1229@gmail.com
+License: Apache-2.0
+Project-URL: Documentation, https://docs.livekit.io
+Project-URL: Website, https://www.zimbeecoin.com/
+Project-URL: Source, https://github.com/livekit/python-sdks/
+Keywords: webrtc,realtime,audio,video,livekit,ZIMBOT
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Multimedia :: Sound/Audio
+Classifier: Topic :: Multimedia :: Video
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9.0
+Description-Content-Type: text/markdown
+Requires-Dist: protobuf>=3
+Requires-Dist: types-protobuf>=3
+
+# LiveKit Real-time Python SDK
+
+The LiveKit Python SDK provides a convenient interface for integrating LiveKit's real-time video and audio capabilities into your Python applications. With it, developers can easily leverage LiveKit's WebRTC functionalities, allowing them to focus on building their AI models or other application logic without worrying about the complexities of WebRTC.
