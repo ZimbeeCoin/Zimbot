@@ -1,10 +1,17 @@
 import os
 import sys
 
-# Add the path to livekit_protocol/protocol to the Python module search path
-sys.path.append("/home/zimbot/ZimbeeCoin/Zimbot/livekit/livekit_protocol/protocol")
+# Get the absolute path to the directory containing this script
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Import the necessary protobuf modules
+# Construct the path to the protocol directory
+protocol_dir = os.path.abspath(os.path.join(current_dir, '..', 'src', 'zimbot', 'livekit', 'livekit_protocol', 'protocol'))
+
+# Add the protocol directory to the Python module search path
+if protocol_dir not in sys.path:
+    sys.path.append(protocol_dir)
+
+# Now import the compiled protobuf modules
 import livekit_agent_pb2
 import livekit_models_pb2  # Import for the Room message
 

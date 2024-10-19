@@ -1,2 +1,0 @@
-livekit
-proto_files
