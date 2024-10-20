@@ -1,7 +1,7 @@
 # Requirements for Zimbot
 
 # Flask and related packages
-Flask==2.2.3
+Flask==2.2.5
 flask-swagger-ui==3.36.0
 
 # Telegram Bot
