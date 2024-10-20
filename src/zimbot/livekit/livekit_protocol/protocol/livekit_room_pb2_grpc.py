@@ -3,8 +3,8 @@
 import grpc
 import warnings
 
-import livekit_models_pb2 as livekit__models__pb2
-import livekit_room_pb2 as livekit__room__pb2
+from . import livekit_models_pb2 as livekit__models__pb2
+from . import livekit_room_pb2 as livekit__room__pb2
 
 GRPC_GENERATED_VERSION = '1.67.0'
 GRPC_VERSION = grpc.__version__

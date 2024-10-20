@@ -1,8 +1,11 @@
 # Virtual Environments
 venv/
+zimbot/
 # Python Cache
 __pycache__/
 # Environment Variables
 .env
 # Pytest cache
 .pytest_cache/
+__pycache__/
+*.pyc

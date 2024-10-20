@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import livekit_agent_dispatch_pb2 as livekit__agent__dispatch__pb2
+from . import livekit_agent_dispatch_pb2 as livekit__agent__dispatch__pb2
 
 GRPC_GENERATED_VERSION = '1.67.0'
 GRPC_VERSION = grpc.__version__
