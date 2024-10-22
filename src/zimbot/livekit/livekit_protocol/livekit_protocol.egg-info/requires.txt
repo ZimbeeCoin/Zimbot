@@ -1,2 +1,0 @@
-protobuf>=3
-types-protobuf<5,>=4

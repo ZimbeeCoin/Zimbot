@@ -1,11 +1,34 @@
-# Virtual Environments
-venv/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
 zimbot/
-# Python Cache
-__pycache__/
-# Environment Variables
-.env
-# Pytest cache
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Testing
 .pytest_cache/
-__pycache__/
-*.pyc
+coverage.xml
+htmlcov/
+
+# Documentation
+docs/_build/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment variables
+.env
+
+# Logs
+*.log

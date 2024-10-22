@@ -4,6 +4,7 @@ from .alphavantage import AlphaVantage as av
 class CryptoCurrencies(av):
     """This class implements all the crypto currencies api calls
     """
+
     @av._output_format
     @av._call_api_on_func
     def get_digital_currency_daily(self, symbol, market):
@@ -73,17 +74,22 @@ class CryptoCurrencies(av):
         """
         _FUNCTION_KEY = 'CURRENCY_EXCHANGE_RATE'
         return _FUNCTION_KEY, 'Realtime Currency Exchange Rate', None
-
+    
     @av._output_format
     @av._call_api_on_func
-    def get_digital_crypto_rating(self, symbol):
-        """ Returns the Fundamental Crypto Asset Score for a digital currency
-        (e.g., BTC), and when it was last updated.
+    def get_crypto_intraday(self, symbol, market, interval, outputsize='compact'):
+        """ Returns the intraday time series
+        of the cryptocurrency specified, updated realtime.
 
         Keyword Arguments:
-            symbol: The digital/crypto currency of your choice. It can be any
-            of the currencies in the digital currency list. For example:
-            symbol=BTC.
+            symbol:  digital/crypto currency of your choice
+            market:  exchange market of your choice
+            interval:  time interval between two consecutive values,
+                supported values are '1min', '5min', '15min', '30min', '60min'
+            outputsize:  The size of the call, supported values are
+                'compact' and 'full; the first returns the last 100 points in the
+                data series, and 'full' returns the full-length intraday times
+                series (default 'compact')
         """
-        _FUNCTION_KEY = 'CRYPTO_RATING'
-        return _FUNCTION_KEY, 'Crypto Rating (FCAS)', None
+        _FUNCTION_KEY = 'CRYPTO_INTRADAY'
+        return _FUNCTION_KEY, "Time Series Crypto ({})".format(interval), 'Meta Data'

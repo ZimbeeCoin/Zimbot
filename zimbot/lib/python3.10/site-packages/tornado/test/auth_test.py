@@ -502,14 +502,14 @@ class AuthTest(AsyncHTTPTestCase):
         self.assertEqual(
             parsed,
             {
-                u"access_token": {
-                    u"key": u"hjkl",
-                    u"screen_name": u"foo",
-                    u"secret": u"vbnm",
+                "access_token": {
+                    "key": "hjkl",
+                    "screen_name": "foo",
+                    "secret": "vbnm",
                 },
-                u"name": u"Foo",
-                u"screen_name": u"foo",
-                u"username": u"foo",
+                "name": "Foo",
+                "screen_name": "foo",
+                "username": "foo",
             },
         )
 
@@ -550,7 +550,6 @@ class GoogleLoginHandler(RequestHandler, GoogleOAuth2Mixin):
             self.authorize_redirect(
                 redirect_uri=self._OAUTH_REDIRECT_URI,
                 client_id=self.settings["google_oauth"]["key"],
-                client_secret=self.settings["google_oauth"]["secret"],
                 scope=["profile", "email"],
                 response_type="code",
                 extra_params={"prompt": "select_account"},
@@ -601,9 +600,9 @@ class GoogleOAuth2Test(AsyncHTTPTestCase):
         response = self.fetch("/client/login")
         self.assertDictEqual(
             {
-                u"name": u"Foo",
-                u"email": u"foo@example.com",
-                u"access_token": u"fake-access-token",
+                "name": "Foo",
+                "email": "foo@example.com",
+                "access_token": "fake-access-token",
             },
             json_decode(response.body),
         )

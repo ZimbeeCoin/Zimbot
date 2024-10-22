@@ -34,6 +34,30 @@ class FundamentalData(av):
     
     @av._output_format
     @av._call_api_on_func
+    def get_dividends(self, symbol):
+        """
+        Returns historical and future (declared) dividend distributions.
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'DIVIDENDS'
+        return _FUNCTION_KEY, 'data', 'symbol'
+    
+    @av._output_format
+    @av._call_api_on_func
+    def get_splits(self, symbol):
+        """
+        Returns historical split events.
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'SPLITS'
+        return _FUNCTION_KEY, 'data', 'symbol'
+    
+    @av._output_format
+    @av._call_api_on_func
     def get_income_statement_annual(self, symbol):
         """
         Returns the annual and quarterly income statements for the company of interest. 
@@ -115,3 +139,29 @@ class FundamentalData(av):
         """
         _FUNCTION_KEY = 'CASH_FLOW'
         return _FUNCTION_KEY, 'quarterlyReports', 'symbol'
+    
+    @av._output_format
+    @av._call_api_on_func
+    def get_earnings_annual(self, symbol):
+        """
+        Returns the annual and quarterly earnings (EPS) for the company of interest. 
+        Quarterly data also includes analyst estimates and surprise metrics.
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'EARNINGS'
+        return _FUNCTION_KEY, 'annualEarnings', 'symbol'
+    
+    @av._output_format
+    @av._call_api_on_func
+    def get_earnings_quarterly(self, symbol):
+        """
+        Returns the annual and quarterly earnings (EPS) for the company of interest. 
+        Quarterly data also includes analyst estimates and surprise metrics.
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'EARNINGS'
+        return _FUNCTION_KEY, 'quarterlyEarnings', 'symbol'
