@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zimbot Consultation</title>
     <script src="https://unpkg.com/livekit-client@1.3.0/dist/livekit.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        #video-container { display: flex; justify-content: center; margin-top: 20px; }
-        video { width: 45%; margin: 0 10px; border: 1px solid #ccc; }
+        #video-container { display: flex; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+        video { width: 45%; margin: 10px; border: 1px solid #ccc; }
+        #status { margin-top: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
     <h1>Zimbot Real-Time Consultation</h1>
     <div id="video-container">
-        <video id="localVideo" autoplay muted></video>
-        <video id="remoteVideo" autoplay></video>
+        <video id="localVideo" autoplay muted aria-label="Local Video Feed"></video>
+        <video id="remoteVideo" autoplay aria-label="Remote Video Feed"></video>
     </div>
+    <p id="status">Connecting to the room...</p>
 
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const roomName = urlParams.get('room');
-        const token = urlParams.get('token');
+        (async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const roomName = urlParams.get('room');
+            const token = urlParams.get('token');
+            const status = document.getElementById('status');
 
-        if (!roomName || !token) {
-            alert('Invalid room or token.');
-        } else {
-            const { Room, RoomEvent, Track } = LiveKit;
-            const room = new Room();
+            if (!roomName || !token) {
+                status.textContent = 'Invalid room or token.';
+                status.style.color = 'red';
+                return;
+            }
 
-            room.on(RoomEvent.TrackPublished, track => {
-                if (track.kind === Track.Kind.Video) {
-                    track.attach(document.getElementById('remoteVideo'));
-                }
-            });
+            try {
+                const { Room, RoomEvent, Track } = LiveKit;
+                const room = new Room();
 
-            room.on(RoomEvent.TrackSubscribed, track => {
-                if (track.kind === Track.Kind.Video) {
-                    track.attach(document.getElementById('remoteVideo'));
-                }
-            });
-
-            room.connect('wss://zimbee-gp6dbt5a.livekit.cloud', token, { room: roomName })
-                .then(() => {
-                    console.log(`Connected to LiveKit room: ${roomName}`);
-                    const localTrack = LiveKit.createLocalVideoTrack();
-                    room.localParticipant.publishTrack(localTrack);
-                    localTrack.attach(document.getElementById('localVideo'));
-                })
-                .catch(err => {
-                    console.error('Failed to connect to LiveKit room:', err);
+                room.on(RoomEvent.TrackPublished, track => {
+                    if (track.kind === Track.Kind.Video) {
+                        track.attach(document.getElementById('remoteVideo'));
+                    }
                 });
-        }
+
+                room.on(RoomEvent.TrackSubscribed, track => {
+                    if (track.kind === Track.Kind.Video) {
+                        track.attach(document.getElementById('remoteVideo'));
+                    }
+                });
+
+                await room.connect('wss://zimbee-gp6dbt5a.livekit.cloud', token, { room: roomName });
+                status.textContent = `Connected to LiveKit room: ${roomName}`;
+                status.style.color = 'green';
+
+                const localTrack = await LiveKit.createLocalVideoTrack();
+                await room.localParticipant.publishTrack(localTrack);
+                localTrack.attach(document.getElementById('localVideo'));
+            } catch (err) {
+                status.textContent = 'Failed to connect to the room.';
+                status.style.color = 'red';
+                console.error('Failed to connect to LiveKit room:', err);
+            }
+        })();
     </script>
 </body>
 </html>

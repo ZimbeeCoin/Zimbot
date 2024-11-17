@@ -70,25 +70,25 @@ graph TD
     B --> C[LiveKit Integration]
     C --> D[OpenAI API]
     D --> E[Financial Data APIs]
-    
+
     subgraph Telegram Bot Core
         B1[Handles Commands]
         B2[Manages Interactions]
         B1 --> B2
     end
-    
+
     subgraph LiveKit Integration
         C1[Voice & Video Calls]
         C2[Real-Time Communication]
         C1 --> C2
     end
-    
+
     subgraph OpenAI API
         D1[AI-Driven Insights]
         D2[Image Generation]
         D1 --> D2
     end
-    
+
     subgraph Financial Data APIs
         E1[Crypto (CoinGecko)]
         E2[Stocks (Alpha Vantage)]

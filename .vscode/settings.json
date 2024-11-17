@@ -1,5 +1,58 @@
 {
-    "python.analysis.extraPaths": [
-        "./livekit/livekit_protocol/protocol"
-    ]
+    // Enable Pyright-based analysis in VSCode
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "warning"
+    },
+
+    // Code Formatter
+    "editor.formatOnSave": true,
+    "editor.rulers": [88, 100],
+    "editor.defaultFormatter": "ms-python.python", // Set the Python extension as the default formatter
+
+    // Python Interpreter Path
+    "python.defaultInterpreterPath": "/home/zimbot/.cache/pypoetry/virtualenvs/zimbot-py3.10/bin/python",
+
+    // Extra paths for import resolution in src folder
+    "python.analysis.extraPaths": ["./src"],
+
+    // Linting Configuration
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": true,
+
+    // Specify paths to linters if installed in Poetry environment
+    "python.linting.flake8Path": "/home/zimbot/.cache/pypoetry/virtualenvs/zimbot-py3.10/bin/flake8",
+    "python.linting.pylintPath": "/home/zimbot/.cache/pypoetry/virtualenvs/zimbot-py3.10/bin/pylint",
+
+    // Formatter Configuration
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/home/zimbot/.cache/pypoetry/virtualenvs/zimbot-py3.10/bin/black",
+
+    // Import Sorter Configuration
+    "python.sortImports.args": ["--profile", "black"],
+
+    // Specify path to isort if installed in Poetry environment
+    "python.sortImports.path": "/home/zimbot/.cache/pypoetry/virtualenvs/zimbot-py3.10/bin/isort",
+
+    // Type Checking with mypy (Optional)
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": ["--ignore-missing-imports"],
+
+    // Editor Settings
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+
+    // VSCode Extensions Recommendations (Optional)
+    "extensions.ignoreRecommendations": false,
+    "extensions.autoUpdate": true,
+
+    // Settings for better IntelliSense and code navigation
+    "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": true,
+
+    // Terminal Integration
+    "terminal.integrated.shell.linux": "/bin/bash"
 }

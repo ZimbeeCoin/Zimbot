@@ -1,0 +1,10 @@
+openai:
+  model: gpt-4o
+  max_tokens: 2000
+  temperature: 0.7
+livekit:
+  room_size: 10
+  timeout: 300
+telegram:
+  polling_timeout: 60
+  worker_count: 4

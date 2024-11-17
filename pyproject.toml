@@ -1,0 +1,355 @@
+[tool.poetry]
+name = "zimbot"
+version = "0.1.0"
+description = "A comprehensive AI agent application integrating LiveKit, OpenAI, and real-time cryptocurrency price feeds."
+authors = ["Michael Smith <michaelsmith@zimbeecoin.com>"]
+readme = "README.md"
+license = "Apache-2.0"
+keywords = [
+    "webrtc",
+    "realtime",
+    "audio",
+    "video",
+    "livekit",
+    "AI",
+    "cryptocurrency",
+    "bot",
+    "trading",
+    "machine-learning",
+]
+
+# Specify the main package under src/zimbot/
+packages = [
+    { include = "zimbot", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+toml = "^0.10.2"
+secweb = "^1.11.0"
+
+# Web Framework
+fastapi = { version = ">=0.115.2,<1.0.0" }
+uvicorn = { version = ">=0.18.0,<1.0.0", optional = true }
+starlette = { version = ">=0.41.2,<1.0.0" }
+
+# Celery
+celery = { version = ">=5.0.5,<6.0.0" }
+
+# API and Networking
+redis = { version = ">=5.1.1,<6.0.0", extras = ["asyncio"] }
+httpx = { version = ">=0.27.2,<1.0.0" }
+python-jose = { version = ">=3.3.0,<4.0.0", extras = ["cryptography"] }
+passlib = { extras = ["bcrypt"], version = "^1.7.4" }
+pyjwt = { version = ">=2.8.0,<3.0.0", optional = true }
+bcrypt = { version = ">=4.2.0,<5.0.0", optional = true }
+cryptography = { version = ">=43.0.3,<44.0.0", optional = true }
+python-dotenv = { version = ">=1.0.1,<2.0.0" }
+
+# Caching
+fastapi-cache2 = { version = ">=0.2.2,<1.0.0" }
+
+# OpenTelemetry
+opentelemetry-api = { version = ">=1.28.1,<2.0.0" }
+opentelemetry-sdk = { version = ">=1.28.1,<2.0.0" }
+opentelemetry-exporter-otlp-proto-grpc = { version = ">=1.28.1,<2.0.0" }
+opentelemetry-instrumentation-fastapi = { version = ">=0.29.0,<1.0.0" }
+
+# Monitoring
+prometheus-fastapi-instrumentator = { version = ">=5.9.2,<6.0.0" }
+
+# Utility Libraries
+attrs = { version = ">=24.2.0,<25.0.0", optional = true }
+click = { version = ">=8.1.7,<9.0.0", optional = true }
+jinja2 = { version = ">=3.1.4,<4.0.0", optional = true }
+markupsafe = { version = ">=3.0.2,<4.0.0", optional = true }
+typing_extensions = { version = ">=4.12.2,<5.0.0", optional = true }
+packaging = { version = ">=24.1,<25.0.0", optional = true }
+certifi = { version = ">=2024.8.30,<2025.0.0", optional = true }
+idna = { version = ">=3.10,<4.0.0", optional = true }
+sniffio = { version = ">=1.3.1,<2.0.0", optional = true }
+six = { version = ">=1.16.0,<2.0.0", optional = true }
+
+# Additional Dependencies
+slowapi = "^0.1.9"
+python-telegram-bot = "^21.6"
+cachetools = "^5.5.0"
+backoff = "^2.2.1"
+email-validator = "^2.2.0"
+tenacity = "^9.0.0"
+
+# LiveKit Integration
+livekit = { version = ">=0.17.5,<1.0.0" }
+livekit-api = "^0.7.1"
+
+# AI and Machine Learning
+openai = { version = ">=1.52.0,<2.0.0" }
+numpy = { version = ">=1.24.0,<2.0.0" }
+pandas = { version = ">=2.0.0,<3.0.0" }
+tqdm = { version = ">=4.66.5,<5.0.0" }
+
+# Cryptocurrency
+pycoingecko = { version = ">=3.1.0,<4.0.0" }
+alpha_vantage = { version = ">=3.0.0,<4.0.0" }
+
+# Scheduling and Background Tasks
+apscheduler = { version = ">=3.10.4,<4.0.0", optional = true }
+tzlocal = { version = ">=5.2,<6.0.0", optional = true }
+pytz = { version = ">=2024.2,<2025.0.0", optional = true }
+
+# Monitoring and Error Tracking
+sentry-sdk = { version = ">=2.18.0,<3.0.0", optional = true }
+loguru = { version = ">=0.7.2,<1.0.0", optional = true }
+
+# Payment Processing
+stripe = { version = ">=11.1.1,<12.0.0", optional = true }
+
+# Documentation
+sphinx = { version = ">=8.1.3,<9.0.0", optional = true }
+sphinx-autodoc-typehints = { version = ">=2.5.0,<3.0.0", optional = true }
+sphinx-copybutton = { version = ">=0.5.2,<0.6.0", optional = true }
+sphinx-bootstrap-theme = { version = ">=0.8.1,<1.0.0", optional = true }
+sphinxcontrib-htmlhelp = { version = ">=2.1.0,<3.0.0", optional = true }
+sphinxcontrib-applehelp = { version = ">=2.0.0,<3.0.0", optional = true }
+sphinxcontrib-devhelp = { version = ">=2.0.0,<3.0.0", optional = true }
+sphinxcontrib-jsmath = { version = ">=1.0.1,<2.0.0", optional = true }
+sphinxcontrib-qthelp = { version = ">=2.0.0,<3.0.0", optional = true }
+sphinxcontrib-serializinghtml = { version = ">=2.0.0,<3.0.0", optional = true }
+pyotp = "^2.9.0"
+aioredis = "^2.0.1"
+pybase64 = "^1.4.0"
+alembic = "^1.14.0"
+psycopg2-binary = "^2.9.10"
+psycopg2 = "^2.9.10"
+pyyaml = "^6.0.2"
+autoflake = "^2.3.1"
+
+[tool.poetry.extras]
+docs = [
+    "sphinx",
+    "sphinx-autodoc-typehints",
+    "sphinx-copybutton",
+    "sphinx-bootstrap-theme",
+    "sphinxcontrib-htmlhelp",
+    "sphinxcontrib-applehelp",
+    "sphinxcontrib-devhelp",
+    "sphinxcontrib-jsmath",
+    "sphinxcontrib-qthelp",
+    "sphinxcontrib-serializinghtml",
+]
+production = [
+    "gunicorn",
+    "supervisor",
+    "python-json-logger",
+]
+
+[tool.poetry.dev-dependencies]
+# Testing
+pytest = { version = ">=8.3.3,<9.0.0" }
+pytest-cov = { version = ">=4.1.0,<5.0.0" }
+pytest-asyncio = { version = ">=0.23.0,<1.0.0" }
+pytest-mock = { version = ">=3.12.0,<4.0.0" }
+pytest-xdist = { version = ">=3.3.1,<4.0.0" }
+hypothesis = { version = ">=6.75.3,<7.0.0" }
+faker = { version = ">=18.9.0,<19.0.0" }
+
+# Code Quality
+mypy = { version = ">=1.13.0,<2.0.0" }
+black = { version = ">=24.3.0,<25.0.0" }
+flake8 = { version = ">=6.1.0,<7.0.0" }
+isort = { version = ">=5.13.2,<6.0.0" }
+pylint = { version = ">=3.3.1,<4.0.0" }
+darglint = { version = ">=1.8.1,<2.0.0" }
+flake8-docstrings = { version = ">=1.7.0,<2.0.0" }
+
+# Security
+bandit = { version = ">=1.7.10,<2.0.0" }
+safety = { version = ">=2.4.0b2,<3.0.0" }
+pip-audit = { version = ">=2.7.3,<3.0.0" }
+radon = { version = ">=6.0.1,<7.0.0" }
+
+# Development Tools
+pip-tools = { version = ">=7.4.1,<8.0.0" }
+
+[tool.poetry.group.dev.dependencies]
+types-toml = "^0.10.8.20240310"
+autopep8 = "<2.3.1"
+types-python-jose = "^3.3.4.20240106"
+types-passlib = "^1.7.7.20240819"
+pre-commit = { version = ">=4.0.1,<5.0.0" }
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.9.1,<2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "-ra",
+    "-q",
+    "--cov=zimbot",
+    "--cov-report=term-missing",
+    "--cov-report=xml",
+    "--cov-report=html",
+    "--hypothesis-show-statistics",
+    "--strict-markers",
+    "--strict-config",
+    "-n=auto",
+]
+testpaths = [
+    "tests",
+    "src/zimbot/tests",
+]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "unit: mark test as a unit test",
+    "integration: mark test as an integration test",
+    "slow: mark test as a slow test",
+    "api: mark test as an API test",
+    "async: mark test as an async test",
+    "security: mark test as a security test",
+    "performance: mark test as a performance test",
+    "database: mark test as a database test",
+]
+
+[tool.coverage.run]
+source = ["zimbot"]
+omit = [
+    "tests/*",
+    "**/__init__.py",
+    "**/migrations/*",
+    "**/proto_files/*",
+    "**/version.py",
+    "**/setup.py",
+]
+branch = true
+parallel = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise NotImplementedError",
+    "if __name__ == '__main__':",
+    "pass",
+    "raise ImportError",
+    "raise ValueError",
+    "@abstract",
+    "if TYPE_CHECKING:",
+]
+fail_under = 80
+show_missing = true
+
+[tool.bandit]
+exclude_dirs = ["tests", "docs"]
+tests = ["B201", "B301"]
+skips = ["B101", "B601"]
+
+[tool.poetry.scripts]
+analyze_project = "analyze_project:main"
+
+[tool.safety]
+ignore_cvss_severity_below = 6.0
+ignore_ids = []
+continue_on_error = false
+
+[tool.darglint]
+docstring_style = "google"
+strictness = "short"
+enable = ["DAR003", "DAR102", "DAR203"]
+
+[tool.pip-audit]
+ignore_vulns = []
+require_hashes = true
+
+[tool.black]
+line-length = 88
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+  | migrations
+  | tests/__pycache__
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+skip = [
+    "build",
+    "dist",
+    ".git",
+    "venv",
+    "proto_files",
+]
+skip_glob = [
+    "**/site-packages/**",
+    "**/__pycache__/**",
+    "**/tests/**",
+    "**/migrations/**",
+]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_optional = true
+plugins = ["pydantic.mypy"]
+exclude = [
+    "tests/",
+    "docs/",
+    "build/",
+    "dist/",
+    "*.pyi",
+]
+[[tool.mypy.overrides]]
+module = [
+    "gunicorn.*",
+    "pytest.*",
+    "setuptools.*",
+    "uvicorn.*",
+]
+ignore_missing_imports = true
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+max-complexity = 10
+select = ["C", "E", "F", "W", "B", "B950"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg-info",
+    ".venv",
+    "migrations",
+]
+
+[tool.flake8.docstrings]
+ignore = ["D100", "D104", "D200", "D205", "D400", "D401"]
+max-line-length = 88

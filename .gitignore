@@ -1,34 +1,205 @@
-# Byte-compiled / optimized / DLL files
+# ============================
+# Python Bytecode and Compiled Files
+# ============================
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Virtual environments
-zimbot/
-venv/
+# ============================
+# Virtual Environments
+# ============================
+.env
+.venv
 env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.zimbot/
+zimbot/
+.zimbot/*
+zimbot/*
 
-# Distribution / packaging
+# ============================
+# Distribution / Packaging
+# ============================
 build/
 dist/
 *.egg-info/
+.eggs/
+MANIFEST
 
-# Testing
-.pytest_cache/
-coverage.xml
+# ============================
+# Installer Logs
+# ============================
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ============================
+# Testing and Coverage
+# ============================
 htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
 
-# Documentation
+# ============================
+# Mypy
+# ============================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+mypy.ini
+
+# ============================
+# Pyre Type Checker
+# ============================
+.pyre/
+
+# ============================
+# Cython Debug Symbols
+# ============================
+cython_debug/
+
+# ============================
+# Translations
+# ============================
+*.mo
+*.pot
+
+# ============================
+# Logs and Databases
+# ============================
+logs/
+*.log
+*.sqlite3
+*.db
+
+# ============================
+# Sphinx Documentation
+# ============================
 docs/_build/
+docs/_site/
+docs/source/_build/
+docs/source/_static/
 
-# IDEs and editors
-.vscode/
+# ============================
+# Jupyter Notebook
+# ============================
+.ipynb_checkpoints/
+
+# ============================
+# IDEs and Editors
+# ============================
 .idea/
+.vscode/
 *.sublime-project
 *.sublime-workspace
+*.swp
+*.swo
 
-# Environment variables
-.env
+# ============================
+# Rope Project Settings
+# ============================
+.ropeproject/
 
-# Logs
-*.log
+# ============================
+# OS-Specific Files
+# ============================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ============================
+# Package Managers
+# ============================
+poetry.lock
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# ============================
+# Secrets
+# ============================
+*.pem
+*.key
+*.crt
+
+# ============================
+# Temporary Files
+# ============================
+tmp/
+temp/
+*$
+
+# ============================
+# Build Artifacts
+# ============================
+*.o
+*.a
+*.pyc
+
+# ============================
+# Protobuf Generated Files
+# ============================
+*.pb.go
+*.pb.py
+*.pb.ts
+protobuf/
+
+# ============================
+# Coverage and Reports
+# ============================
+coverage/
+htmlcov/
+reports/
+coverage_html_report/
+test_reports/
+
+# ============================
+# Analysis Tools
+# ============================
+analyze_project.py
+generate_directory_tree.py
+project_analysis_report_*.md
+project_analyzer.py
+
+# ============================
+# Git
+# ============================
+.git/
+.github/
+
+# ============================
+# Docker
+# ============================
+Dockerfile
+
+# ============================
+# Miscellaneous
+# ============================
+*.bak
+*.tmp
+*.old
+*.orig
+*.rej
+*.gz
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.dmg
+activate.sh
+zimbot/
+Zimbot_backup/
+alembic/
+scripts/

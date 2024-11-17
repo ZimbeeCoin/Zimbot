@@ -1,0 +1,67 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-toml
+
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        language_version: python3.10
+        additional_dependencies: ['platformdirs>=3.0.0']
+        args: ['--line-length', '88']  # Set Black to 88-character line length
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        language_version: python3.10
+        additional_dependencies: ['platformdirs>=3.0.0']
+        args: ['--profile', 'black', '--line-length', '88']  # Match Black's line length
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        language_version: python3.10
+        additional_dependencies:
+          - flake8-docstrings
+          - flake8-quotes
+        # Removed the 'args' section to allow Flake8 to use pyproject.toml settings
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        language_version: python3.10
+        additional_dependencies:
+          - platformdirs>=3.0.0
+          - types-requests
+          - types-PyYAML
+          - types-setuptools  # Include if your project needs it
+        args: ['--ignore-missing-imports']
+        exclude: ^(docs/|proto/|generated/)
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.10
+    hooks:
+      - id: bandit
+        args: ['-s', 'B101']  # Skip specific tests as needed
+
+  - repo: https://github.com/terrencepreilly/darglint
+    rev: v1.8.1
+    hooks:
+      - id: darglint
+        args: ['--docstring-style', 'google']  # Ensure docstrings match Google convention
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.19.0
+    hooks:
+      - id: pyupgrade
+        language_version: python3.10
+        args: ['--py3-plus']

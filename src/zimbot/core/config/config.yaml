@@ -1,0 +1,241 @@
+# config.yaml
+
+# ----------------------------
+# Global Configuration (Defaults)
+# ----------------------------
+dependencies:
+  - fastapi>=0.115.2,<1.0.0
+  - flask>=3.0.3,<4.0.0
+  - uvicorn>=0.32.0,<1.0.0
+  - starlette>=0.40.0,<1.0.0
+  - werkzeug>=3.0.4,<4.0.0
+  - flask-swagger-ui>=4.11.1,<5.0.0
+  - asgiref>=3.8.1,<4.0.0
+  - sqlalchemy>=2.0.36,<3.0.0
+  - alembic>=1.13.3,<2.0.0
+  - redis>=5.1.1,<6.0.0
+  - greenlet>=3.1.1,<4.0.0
+  - aiohttp>=3.10.10,<4.0.0
+  - httpx>=0.27.2,<1.0.0
+  - requests>=2.32.3,<3.0.0
+  - grpcio>=1.67.0,<2.0.0
+  - grpcio-tools>=1.67.0,<2.0.0
+  - yarl>=1.15.5,<2.0.0
+  - aiohappyeyeballs>=2.4.3,<3.0.0
+  - aiosignal>=1.3.1,<2.0.0
+  - async-timeout>=4.0.3,<5.0.0
+  - httpcore>=1.0.6,<2.0.0
+  - openai>=1.52.0,<2.0.0
+  - numpy>=1.24.0,<2.0.0
+  - pandas>=2.0.0,<3.0.0
+  - tqdm>=4.66.5,<5.0.0
+  - pycoingecko>=3.1.0,<4.0.0
+  - alpha_vantage>=3.0.0,<4.0.0
+  - livekit>=0.17.5,<1.0.0
+  - python-jose>=3.3.0,<4.0.0
+  - passlib[bcrypt]>=1.7.4
+  - pyjwt>=2.8.0,<3.0.0
+  - bcrypt>=4.2.0,<5.0.0
+  - cryptography>=43.0.3,<44.0.0
+  - python-dotenv>=1.0.1,<2.0.0
+  - pydantic>=2.9.2,<3.0.0
+  - pydantic-settings>=2.6.0,<3.0.0
+  - pydantic_core>=2.23.4,<3.0.0
+  - annotated-types>=0.7.0,<1.0.0
+  - apscheduler>=3.10.4,<4.0.0
+  - tzlocal>=5.2,<6.0.0
+  - pytz>=2024.2,<2025.0.0
+  - sentry-sdk>=2.17.0,<3.0.0
+  - loguru>=0.7.2,<1.0.0
+  - stripe>=11.1.1,<12.0.0
+  - attrs>=24.2.0,<25.0.0
+  - click>=8.1.7,<9.0.0
+  - jinja2>=3.1.4,<4.0.0
+  - markupsafe>=3.0.2,<4.0.0
+  - typing_extensions>=4.12.2,<5.0.0
+  - packaging>=24.1,<25.0.0
+  - certifi>=2024.8.30,<2025.0.0
+  - idna>=3.10,<4.0.0
+  - sniffio>=1.3.1,<2.0.0
+  - six>=1.16.0,<2.0.0
+  - livekit-api==0.7.1
+  - python-telegram-bot==21.6
+  - boto3>=1.35.16,<1.35.37
+  - slowapi==0.1.9
+  - aioboto3==13.2.0
+  - cachetools==5.5.0
+  - backoff==2.2.1
+  - email-validator==2.2.0
+  - tenacity==9.0.0
+  - sphinxcontrib-htmlhelp==2.1.0
+  - sphinxcontrib-applehelp==2.0.0
+  - sphinxcontrib-devhelp==2.0.0
+  - sphinxcontrib-jsmath==1.0.1
+  - sphinxcontrib-qthelp==2.0.0
+  - sphinxcontrib-serializinghtml==2.0.0
+
+# ----------------------------
+# Testing Configuration
+# ----------------------------
+testing:
+  pytest:
+    minversion: "6.0"
+    addopts:
+      - "-ra"
+      - "-q"
+      - "--cov=zimbot"
+      - "--cov-report=term-missing"
+      - "--cov-report=xml"
+      - "--cov-report=html"
+      - "--hypothesis-show-statistics"
+      - "--strict-markers"
+      - "--strict-config"
+      - "-n=auto"
+    testpaths:
+      - "tests"
+      - "src/zimbot/tests"
+    python_files:
+      - "test_*.py"
+      - "*_test.py"
+    python_classes:
+      - "Test*"
+    python_functions:
+      - "test_*"
+    asyncio_mode: "auto"
+    markers:
+      - "unit: mark test as a unit test"
+      - "integration: mark test as an integration test"
+      - "slow: mark test as a slow test"
+      - "api: mark test as an API test"
+      - "async: mark test as an async test"
+      - "security: mark test as a security test"
+      - "performance: mark test as a performance test"
+      - "database: mark test as a database test"
+
+# ----------------------------
+# Linting Configuration
+# ----------------------------
+linting:
+  flake8:
+    max-line-length: 88
+    extend-ignore:
+      - "E203"
+      - "W503"
+    max-complexity: 10
+    select:
+      - "C"
+      - "E"
+      - "F"
+      - "W"
+      - "B"
+      - "B950"
+    exclude:
+      - ".git"
+      - "__pycache__"
+      - "build"
+      - "dist"
+      - "*.egg-info"
+      - ".venv"
+      - "migrations"
+  flake8_docstrings:
+    ignore:
+      - "D100"
+      - "D104"
+      - "D200"
+      - "D205"
+      - "D400"
+      - "D401"
+    max-line-length: 88
+  pylint:
+    max-line-length: 88
+    disable:
+      - "C0111"  # missing-docstring
+      - "R0903"  # too-few-public-methods
+      - "C0103"  # invalid-name
+    good-names:
+      - "i"
+      - "j"
+      - "k"
+      - "ex"
+      - "Run"
+      - "_"
+      - "fp"
+      - "id"
+    ignore-paths:
+      - "tests/"
+      - "docs/"
+      - "build/"
+      - "dist/"
+    load-plugins:
+      - "pylint.extensions.docparams"
+    accept-no-param-doc: false
+    accept-no-return-doc: false
+    accept-no-yields-doc: false
+    max-args: 8
+    max-attributes: 8
+    max-bool-expr: 5
+    max-branches: 12
+    max-locals: 15
+    max-parents: 7
+    max-public-methods: 20
+    max-returns: 6
+    max-statements: 50
+    min-public-methods: 1
+  mypy:
+    python_version: "3.10"
+    warn_return_any: true
+    warn_unused_configs: true
+    disallow_untyped_defs: true
+    check_untyped_defs: true
+    disallow_incomplete_defs: true
+    disallow_untyped_decorators: true
+    no_implicit_optional: true
+    warn_redundant_casts: true
+    warn_unused_ignores: true
+    warn_no_return: true
+    warn_unreachable: true
+    strict_optional: true
+    plugins:
+      - "pydantic.mypy"
+    exclude:
+      - "tests/"
+      - "docs/"
+      - "build/"
+      - "dist/"
+      - "*.pyi"
+    overrides:
+      - module:
+          - "gunicorn.*"
+          - "pytest.*"
+          - "setuptools.*"
+          - "uvicorn.*"
+        ignore_missing_imports: true
+
+# ----------------------------
+# Security Configuration
+# ----------------------------
+security:
+  bandit:
+    exclude_dirs:
+      - "tests"
+      - "docs"
+    tests:
+      - "B201"
+      - "B301"
+    skips:
+      - "B101"
+      - "B601"
+  safety:
+    ignore_cvss_severity_below: 6.0
+    ignore_ids: []
+    continue_on_error: false
+  pip_audit:
+    ignore_vulns: []
+    require_hashes: true
+  darglint:
+    docstring_style: "google"
+    strictness: "short"
+    enable:
+      - "DAR003"
+      - "DAR102"
+      - "DAR203"

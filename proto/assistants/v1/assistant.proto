@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package assistants.v1;
+
+service AssistantService {
+    rpc CreateAssistant (CreateAssistantRequest) returns (Assistant);
+}
+
+message CreateAssistantRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message Assistant {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
